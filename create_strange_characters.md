@@ -10,3 +10,21 @@ func solution(_ s: String) -> String {
     }.joined(separator: " ")
 }
 ```
+
+```swift
+func solution(_ s: String) -> String {
+    var charIndex = 0
+    return s.enumerated().map { (offset: Int, element: Character) -> String in
+        if element == " ") {
+            charIndex = 0
+        } else {
+            charIndex = charIndex + 1
+            if charIndex % 2 == 1 {
+                return String(element).uppercased()
+            }
+            return String(element).lowercased()
+        }
+        return String(element)
+    }.joined()
+}
+```
