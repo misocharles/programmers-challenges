@@ -15,3 +15,22 @@ func solution(_ num: Int, _ count: Int) -> Int {
     return count
 }
 ```
+
+```swift
+func solution(_ num: Int) -> Int {
+    return solution(num, 0)
+}
+
+func solution(_ num: Int, _ count: Int) -> Int {
+    if num == 1 {
+        return count
+    }
+    if count >= 500 {
+        return -1
+    }
+    if num % 2 != 0 {
+        return solution(num * 3 + 1, count + 1)
+    }
+    return solution(num / 2, count + 1)
+}
+```
